@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-12T05:36:17.719Z",
+    "end": "2024-07-12T05:36:42.869Z",
+    "duration": 25150,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ec70299a-a964-4945-9b96-baad510c1009",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec.cy.js",
+      "file": "cypress\\e2e\\spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1aabc5e5-6cd6-49ed-aa15-5d6ba9382d7e",
+          "title": "tester app the lab",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "passe",
+              "fullTitle": "tester app the lab passe",
+              "timedOut": null,
+              "duration": 1973,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "29084ed7-2ca3-4173-b860-84946d429339",
+              "parentUUID": "1aabc5e5-6cd6-49ed-aa15-5d6ba9382d7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "tester les boutons d'inscription ",
+              "fullTitle": "tester app the lab tester les boutons d'inscription ",
+              "timedOut": null,
+              "duration": 14067,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a[href=\"/signup\"]').contains(\"Inscription\").click();\ncy.url().should('include', '/signup');\ncy.get('#lastname').type(\"khelifa\").wait(1000);\ncy.get(\"#firstname\").type(\"smail\").wait(1000);\ncy.get(\"#birthday\").type(\"2000-05-12\").wait(1000);\ncy.get(\"#email\").type(\"khelifa.smail08@gmail.com\").wait(1000);\ncy.get(\"#password\").type(\"smailwild\").wait(1000);\ncy.get(\"#confirmPassword\").type(\"smailwild\").wait(1000);\ncy.get('#terms').check().wait(1000);\ncy.get('#terms').should('be.checked').wait(1000);\ncy.get('button').contains(\"Je M'inscris\").click().wait(1500);",
+              "err": {},
+              "uuid": "e56af112-c8e9-40b3-9d16-05d221f3ad8c",
+              "parentUUID": "1aabc5e5-6cd6-49ed-aa15-5d6ba9382d7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "tester les boutons de connexion",
+              "fullTitle": "tester app the lab tester les boutons de connexion",
+              "timedOut": null,
+              "duration": 6133,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a[href=\"/login\"]').contains(\"Connexion\").click();\ncy.url().should('include', '/login');\ncy.get(\"#email\").type(\"khelifa.smail08@gmail.com\").wait(1000);\ncy.get(\"#password\").type(\"smailwild\").wait(1000);\ncy.get('button').contains(\"Se Connecter\").click().wait(1500);",
+              "err": {},
+              "uuid": "0c9f1d33-7793-4c04-a5e1-7f41f719bdc0",
+              "parentUUID": "1aabc5e5-6cd6-49ed-aa15-5d6ba9382d7e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "29084ed7-2ca3-4173-b860-84946d429339",
+            "e56af112-c8e9-40b3-9d16-05d221f3ad8c",
+            "0c9f1d33-7793-4c04-a5e1-7f41f719bdc0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22173,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

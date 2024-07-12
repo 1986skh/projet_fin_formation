@@ -16,6 +16,7 @@ describe('tester app the lab', () => {
     cy.get('#terms').check().wait(1000);
     cy.get('#terms').should('be.checked').wait(1000);
     cy.get('button').contains("Je M'inscris").click().wait(1500);
+    cy.url().should('include', '/login');
   });
   it('tester les boutons de connexion', () => {
     cy.get('a[href="/login"]').contains("Connexion").click();
