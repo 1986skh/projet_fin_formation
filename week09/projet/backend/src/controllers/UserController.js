@@ -143,21 +143,21 @@ const updatePassword = async (req, res) => {
     res.status(500).send(error);
   }
 };
-
 const deleteUser = async (req, res) => {
   try {
-    const id = req.payload;
-    const [admin] = await tables.user.getUserById(id);
-    if (admin[0].is_admin !== "admin" && admin[0].is_admin !== "superAdmin") {
+    const adminId = req.payload;
+    const userId = req.params.id;
+    const [admin] = await tables.user.getUserById(adminId);
+    if (!admin.length || (admin[0].is_admin !=="admin" && admin[0].is_admin !== "superAdmin")) {
       return res.status(401).json({ error: "Vous n'avez pas les droits" });
     }
-    const [user] = await tables.user.deleteUser(id);
-    if (user.affectedRows) {
+    const [result] = await tables.user.deleteUser(userId);
+    if (result.affectedRows) {
       res.status(200).json({
         message: "La suppression de l'utilisateur a été effectuée avec succès",
       });
     } else {
-      res.status(401).send("Problème lors de la suppression de l'utilisateur");
+      res.status(404).json({ error: "Utilisateur non trouvé" });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });

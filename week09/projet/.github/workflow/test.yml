@@ -1,0 +1,33 @@
+name: Tests Automation
+
+# Déclenche ce workflow à chaque push
+on: [push]
+
+jobs:
+  test:
+    # Utilise l'image d'environnement Ubuntu la plus récente
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        # Action pour cloner le dépôt github
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          # Installer Node.js version 20
+          node-version: "20"
+
+      - name: Install dependencies
+        # Installer les dépendances du projet
+        run: npm install
+
+      - name: Run Cypress tests
+        # Exécuter les tests Cypress
+        run: npm run cypress:run
+
+      - name: Run Postman tests
+        run: |
+          npm install -g newman 
+          newman run C:\Users\pc\Documents\formation_testeur_2024\newman\projet_formation.json -e C:\Users\pc\Documents\formation_testeur_2024\newman\Environment.json -r htmlextra

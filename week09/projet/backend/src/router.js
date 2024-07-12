@@ -58,6 +58,8 @@ router.get("/userss", verifyToken, userControllers.getAllUserss);
 
 // Route to delete User
 router.delete("/users", verifyToken, userControllers.deleteUser);
+// route to delete user by id je l'ai ajouté
+router.delete("/users/:id", verifyToken, userControllers.deleteUser);
 // Route to get total users
 router.get("/users/total", verifyToken, userControllers.getTotalUsers);
 // Route to set User as Admin
